@@ -1,13 +1,30 @@
 // app.js
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const { checkProductRating } = require('./ai');
-const app = express();
-const port = process.env.PORT || 3000;
 
+
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(cors());
+
+const port = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
+  console.log('DB Connected');
+})
+.catch((err) => {
+  console.error('Connection error:', err);
+});
+
+app.use('/auth', require('./routes/authRoutes'));
+app.use('/scanhistory', require('./routes/scanHistoryRoutes'));
+
 
 // Function to generate random data
 function generateData() {
