@@ -42,7 +42,7 @@ app.get('/data', (req, res) => {
 
 // Define a POST route that echoes back the received data
 app.post('/api/scan', async (req, res) => {
-  const receivedData = req.body.scanned_code;
+  const receivedData = req.body.barcode;
   console.log(receivedData);
   try {
     const rating = await checkProductRating(receivedData);
