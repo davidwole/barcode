@@ -46,10 +46,10 @@ app.post('/api/scan', async (req, res) => {
   console.log(receivedData);
   try {
     const rating = await checkProductRating(receivedData);
-    console.log(rating);
+    console.log(JSON.parse(rating));
 
     res.json({
-      rating
+      JSON.parse(rating)
     });
   } catch (error) {
     res.status(500).json({
