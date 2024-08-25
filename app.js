@@ -48,21 +48,14 @@ app.post('/api/scan', async (req, res) => {
     const response = await axios.get(`https://api.upcitemdb.com/prod/trial/lookup?upc=${receivedData}`);
     const data = response.data.items[0];
     const { title, upc, images} = data;
-    res.json(
-      {
-        title,
-        upc,
-        images
-      }
-    );
 
-
-    return;
-    const rating = await checkProductRating(receivedData);
-    console.log(rating);
+    const score = await checkProductRating(title);
 
     res.json({
-      rating
+      title,
+      upc,
+      image: images[0],
+      score
     });
   } catch (error) {
     res.status(500).json({
