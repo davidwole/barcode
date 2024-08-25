@@ -48,7 +48,7 @@ app.post('/api/scan', async (req, res) => {
     const rating = await checkProductRating(receivedData);
     console.log(rating);
 
-    res.json({
+    res.send({
       rating
     });
   } catch (error) {
