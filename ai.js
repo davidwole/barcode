@@ -13,7 +13,7 @@ async function checkProductRating(product) {
     const response = await result.response;
     const rating = await response.text();
     
-    return rating;
+    return rating.trim();
 
 }
 
