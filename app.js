@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const axios = require('axios');
 const { checkProductRating } = require('./ai');
 
 
@@ -43,17 +44,29 @@ app.get('/data', (req, res) => {
 // Define a POST route that echoes back the received data
 app.post('/api/scan', async (req, res) => {
   const receivedData = req.body.barcode;
-  console.log(receivedData);
   try {
+    const response = await axios.get(`https://api.upcitemdb.com/prod/trial/lookup?upc=${receivedData}`);
+    const data = response.data.items[0];
+    const { title, upc, images} = data;
+    res.json(
+      {
+        title,
+        upc,
+        images
+      }
+    );
+
+
+    return;
     const rating = await checkProductRating(receivedData);
     console.log(rating);
 
-    res.send({
+    res.json({
       rating
     });
   } catch (error) {
     res.status(500).json({
-      error: 'Failed to retrieve rating'
+      error: error.message
     });
   }
 });
