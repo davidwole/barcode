@@ -17,4 +17,8 @@ const dogFoodRatings = [
   { title: "4Health Grain Free Whitefish and Potato", rating: 4 },
   { title: "4Health Grain Free Small Breed", rating: 4.5 },
   { title: "4Health Grain Free Chicken and Vegetables", rating: 4 }
+  { title: "4Health Untamed Wild River Recipe", rating: 4 },
+  { title: "4Health Untamed Red Canyon Recipe", rating: 4 },
+  { title: "4Health Untamed Open Highland Recipe", rating: 4 },
+  { title: "4Health Untamed Southern Bayou Recipe", rating: 4 }
 ];
