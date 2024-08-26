@@ -24,5 +24,9 @@ const dogFoodRatings = [
   { title: "A Pup Above Texas Beef Stew Grain Free", rating: 5 },
   { title: "A Pup Above Turkey Pawella", rating: 5 },
   { title: "A Pup Above Porky’s Luau Grain Free", rating: 5 },
-  { title: "A Pup Above Chicka Chicka Bow Wow", rating: 5 }
+  { title: "A Pup Above Chicka Chicka Bow Wow", rating: 5 },
+  { title: "A Pup Above Chicka Pupatouille", rating: 4.5 },
+  { title: "A Pup Above Beef Pot Roast", rating: 4.5 },
+  { title: "A Pup Above Porky’s Porchetta", rating: 4.5 },
+  { title: "A Pup Above Turkey Pilaf", rating: 4.5 }
 ];
