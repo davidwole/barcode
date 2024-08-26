@@ -20,5 +20,9 @@ const dogFoodRatings = [
   { title: "4Health Untamed Wild River Recipe", rating: 4 },
   { title: "4Health Untamed Red Canyon Recipe", rating: 4 },
   { title: "4Health Untamed Open Highland Recipe", rating: 4 },
-  { title: "4Health Untamed Southern Bayou Recipe", rating: 4 }
+  { title: "4Health Untamed Southern Bayou Recipe", rating: 4 },
+  { title: "A Pup Above Texas Beef Stew Grain Free", rating: 5 },
+  { title: "A Pup Above Turkey Pawella", rating: 5 },
+  { title: "A Pup Above Porky’s Luau Grain Free", rating: 5 },
+  { title: "A Pup Above Chicka Chicka Bow Wow", rating: 5 }
 ];
